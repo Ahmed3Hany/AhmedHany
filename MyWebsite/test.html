@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="imgs/logo.png">
+  <meta name="copyright" content="Created By Ahmed Hany 2023">
+  <script src="js/JQuery%203.6.0%20.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/JQuery.js"></script>
+  <script src="js/all.min.js"></script>
+ 
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="login-form-wrapper" onclick="exlogformwrap();">
+        <div id="login-form">
+            <h2>Sign In</h2>
+            <form name="loginform" id="loginform-f" method="post" action="php/Signin.php">
+                <label for="username">Name:</label>
+                <input type="text" id="logusername" name="username" required>
+                <label for="pass">Password:</label>
+                <div class="input-group">
+                <input type="password" class="form-control" style="width:50%; border-radius:0px !important;" id="logpassword" name="pass" required>
+                <div class="input-group-append">
+                    <a class="rounded-end" style="padding: 8.8px; border: none; background-color: #f5f5f5;" onclick="togglelogPasswordVisibility();" type="button"><i class="fa-solid fa-eye" style="color: #000000;"></i></a>
+                </div>
+                </div>
+                <input type="checkbox" name="remembercheck" id="remembercheck"><label for="remembercheck" class="mb-3 ps-1">Remember Me</label>
+                <a id="forgotpass" onclick="forgotpassform();" class="alrhaveacc d-block mb-3">Forgot Password?</a>
+                <a id="ssubmit" onclick="signform();" class="alrhaveacc mb-3 d-block">Create Account</a>
+                <button id="loginsubmit" name="submit" type="submit" onmouseenter="mouseenterbtn()">Sign In</button>
+            </form>
+            <span class="close" onclick="exlogform();">&times;</span>
+        </div>
+    </div>
+    <script>
+        function mouseenterbtn(){
+            var nametxt = document.getElementById('logusername');
+            var btn = document.getElementById('loginsubmit');
+            var textval = nametxt.value;
+            var textlen = textval.length;
+            if(textlen < 8){
+                btn.classList.toggle('float-end');
+            }
+        }
+    </script>
+</body>
+</html>
